@@ -45,34 +45,6 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="border-t border-border bg-gradient-subtle py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto grid max-w-5xl gap-8 text-center md:grid-cols-4">
-            {[
-              { label: "Team Members", value: TEAM.length },
-              { label: "Combined Experience", value: "30+" },
-              { label: "Countries Served", value: "50+" },
-              { label: "Students Impacted", value: "10K+" },
-            ].map((stat, index) => (
-              <div
-                key={stat.label}
-                className="animate-fade-up space-y-2"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="font-display text-3xl font-semibold text-primary md:text-4xl">
-                  {stat.value}
-                </div>
-
-                <div className="text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">

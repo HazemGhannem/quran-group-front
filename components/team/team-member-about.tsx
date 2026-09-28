@@ -36,7 +36,7 @@ export default function TeamMemberAbout({ member }: TeamMemberAboutProps) {
               </p>
 
               <p className="mt-3 text-sm text-muted-foreground">
-                — {member.name}
+                {member.name}
               </p>
             </div>
           </div>

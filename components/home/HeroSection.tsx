@@ -26,8 +26,8 @@ export default function Hero() {
               <span className="text-gold">Sacred Knowledge</span>
             </h1>
             <p className="mb-8 max-w-xl text-lg leading-relaxed text-primary-foreground/70">
-              Comprehensive courses on Quran recitation, Tajweed, Fiqh, and more
-              — taught by qualified scholars dedicated to authentic Islamic
+              Comprehensive courses on Quran recitation, Tajweed, Fiqh, and
+              more, taught by qualified scholars dedicated to authentic Islamic
               education.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">

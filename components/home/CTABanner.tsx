@@ -19,14 +19,14 @@ export default function CTABanner() {
               Begin Your Journey Today
             </h2>
             <p className="mx-auto mb-8 max-w-lg text-primary-foreground/70">
-              Join thousands of students from around the world studying the
-              Quran and Islamic sciences with qualified scholars.
+              Join students from around the world studying the Quran and
+              Islamic sciences with qualified teachers.
             </p>
             <Link
-              href="/courses"
+              href="/register"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-gold px-8 font-semibold text-gold-foreground transition-colors hover:bg-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
             >
-              Explore All Courses{" "}
+              Get started{" "}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>

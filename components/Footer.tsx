@@ -14,7 +14,8 @@ export default function Footer() {
   return (
     <footer className="mt-24 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
+        {/* lg:grid-cols-3 while Learn/Teach/Stay close are hidden; use lg:grid-cols-6 when restoring them */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-4 group w-fit">
@@ -38,7 +39,7 @@ export default function Footer() {
                 </div>
 
                 <div className="text-[10px] uppercase tracking-widest text-primary-foreground/50">
-                  Sacred Knowledge
+                  Always Free
                 </div>
               </div>
             </Link>
@@ -54,11 +55,13 @@ export default function Footer() {
                   label: "Facebook",
                   href: "https://www.facebook.com/profile.php?id=61586010052765",
                   Icon: FacebookIcon,
+                  hidden: true,
                 },
                 {
                   label: "Instagram",
                   href: "https://www.instagram.com/thequrangroup/",
                   Icon: InstagramIcon,
+                  hidden: true,
                 },
                 {
                   label: "LinkedIn",
@@ -70,14 +73,14 @@ export default function Footer() {
                   href: "https://www.youtube.com/@TheQuranGroup",
                   Icon: YouTubeIcon,
                 },
-              ].map(({ label, href, Icon }) => (
+              ].map(({ label, href, Icon, hidden }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="h-9 w-9 rounded-lg border border-primary-foreground/20 hover:bg-white/10 flex items-center justify-center text-primary-foreground/50 hover:text-primary-foreground transition-colors"
+                  className={`${hidden ? "hidden" : "flex"} h-9 w-9 rounded-lg border border-primary-foreground/20 hover:bg-white/10 items-center justify-center text-primary-foreground/50 hover:text-primary-foreground transition-colors`}
                 >
                   <Icon aria-hidden="true" className="h-4 w-4" />
                 </a>
@@ -85,8 +88,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Learn */}
-          <div>
+          {/* Learn (hidden for now; remove `hidden` to restore) */}
+          <div className="hidden">
             <h2 className="font-display text-base font-semibold mb-4 text-primary-foreground">
               Learn
             </h2>
@@ -108,8 +111,8 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Teach */}
-          <div>
+          {/* Teach (hidden for now; remove `hidden` to restore) */}
+          <div className="hidden">
             <h2 className="font-display text-base font-semibold mb-4 text-primary-foreground">
               Teach
             </h2>
@@ -154,8 +157,8 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Newsletter */}
-          <div>
+          {/* Newsletter (hidden for now; remove `hidden` to restore) */}
+          <div className="hidden">
             <h2 className="font-display text-base font-semibold mb-4 text-primary-foreground">
               Stay close
             </h2>

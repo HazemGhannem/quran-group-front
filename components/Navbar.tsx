@@ -26,7 +26,7 @@ export default function Navbar() {
               </div>
 
               <div className="text-xs uppercase tracking-widest text-muted-foreground">
-                Sacred Knowledge
+                Always Free
               </div>
             </div>
           </div>

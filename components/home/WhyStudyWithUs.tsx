@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Award, Clock, Globe, Shield } from "lucide-react";
+import { CalendarClock, GraduationCap, MessageCircle } from "lucide-react";
 
 interface Feature {
   icon: LucideIcon;
@@ -9,24 +9,19 @@ interface Feature {
 
 const FEATURES: Feature[] = [
   {
-    icon: Shield,
-    title: "Authentic Curriculum",
-    desc: "Courses built on classical texts with chains of transmission (sanad) back to the Prophet.",
+    icon: CalendarClock,
+    title: "Flexible Classes",
+    desc: "Choose classes that align with your availability.",
   },
   {
-    icon: Award,
-    title: "Ijazah Certification",
-    desc: "Earn authenticated certificates upon completion, recognized by traditional institutions.",
+    icon: GraduationCap,
+    title: "Qualified Teachers",
+    desc: "All our teachers are huffaz with experience in their respective fields.",
   },
   {
-    icon: Globe,
-    title: "Live Sessions",
-    desc: "Weekly live sessions with scholars for questions, review, and community learning.",
-  },
-  {
-    icon: Clock,
-    title: "24/7 Access",
-    desc: "Study at your own pace with lifetime access to all course materials and recordings.",
+    icon: MessageCircle,
+    title: "Direct Support",
+    desc: "Ask questions directly to your teacher or dedicated admin.",
   },
 ];
 
@@ -48,7 +43,7 @@ export default function WhyStudyWithUs() {
             Why Study With Us
           </h2>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {FEATURES.map(({ icon: Icon, title, desc }, i) => (
             <div
               key={title}

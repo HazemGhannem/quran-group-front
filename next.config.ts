@@ -26,6 +26,16 @@ const nextConfig: NextConfig = {
     inlineCss: true,
   },
 
+  // Courses are hidden for now: any /courses URL (including course detail
+  // pages) goes back to the home page. Temporary (307) so search engines
+  // don't cache it; delete this block to bring the courses pages back.
+  async redirects() {
+    return [
+      { source: "/courses", destination: "/", permanent: false },
+      { source: "/courses/:path*", destination: "/", permanent: false },
+    ];
+  },
+
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

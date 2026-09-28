@@ -41,30 +41,12 @@ export interface TeamMember {
   quote?: string;
 }
 
-export const STATS = [
-  {
-    icon: GraduationCap,
-    label: "Students Worldwide",
-    value: "500+",
-  },
-  {
-    icon: Clock,
-    label: "Classes Per Week",
-    value: "20+",
-  },
-  {
-    icon: Users,
-    label: "Qualified Teachers",
-    value: "10+",
-  },
-  {
-    icon: Globe,
-    label: "Countries Reached",
-    value: "30+",
-  },
-];
-
 export const OFFERINGS = [
+  {
+    icon: Heart,
+    title: "Always Free",
+    desc: "No hidden fees, no subscriptions. Free Quran education is our promise.",
+  },
   {
     icon: BookOpen,
     title: "No Prerequisites",
@@ -89,11 +71,6 @@ export const OFFERINGS = [
     icon: Globe,
     title: "Open to Everyone",
     desc: "Students from across the globe, every background, every age. All are welcome.",
-  },
-  {
-    icon: Heart,
-    title: "Always Free",
-    desc: "No hidden fees, no subscriptions. Free Quran education is our promise.",
   },
 ];
 
@@ -244,7 +221,7 @@ He is constantly exploring new ways to leverage digital platforms for education 
     bio: "Building the technical foundation for Islamic education.",
     longBio: `Surah is an experienced full-stack developer with a passion for creating technology that serves communities. With expertise in modern web technologies, real-time systems, and scalable architecture, she has built the technical backbone of The Quran Group's platform.
 
-Her focus is on creating robust, accessible, and performant systems that can serve diverse users across the globe. Surah believes that good technology should be invisible—it should simply enable people to connect with knowledge and each other.
+Her focus is on creating robust, accessible, and performant systems that can serve diverse users across the globe. Surah believes that good technology should be invisible. It should simply enable people to connect with knowledge and each other.
 
 She is an advocate for open-source software and regularly contributes to projects that advance the field of digital education.`,
     expertise: [
@@ -279,7 +256,7 @@ She is an advocate for open-source software and regularly contributes to project
     bio: "Designing experiences that inspire and educate.",
     longBio: `Layla is a thoughtful designer who believes that beautiful design should serve purpose, not just aesthetics. With background in interaction design and accessibility, she has crafted The Quran Group's interfaces to be both beautiful and inclusive.
 
-Her design philosophy centers on Islamic aesthetics and principles—harmony, balance, purpose, and accessibility. She works closely with scholars, educators, and community members to ensure every pixel serves the mission of making Islamic education accessible and inspiring.
+Her design philosophy centers on Islamic aesthetics and principles: harmony, balance, purpose, and accessibility. She works closely with scholars, educators, and community members to ensure every pixel serves the mission of making Islamic education accessible and inspiring.
 
 Layla is passionate about inclusive design and ensures that users of all abilities can access our platform with dignity and ease.`,
     expertise: [

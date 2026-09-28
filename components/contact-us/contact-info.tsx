@@ -19,7 +19,7 @@ const contactInfo = [
     icon: Clock,
     title: "Response Time",
     description: "We usually respond within",
-    value: "24–48 hours",
+    value: "24 to 48 hours",
   },
 ];
 export default function ContactInfo() {

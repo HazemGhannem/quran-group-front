@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Star } from "lucide-react";
-import { OFFERINGS, STATS, TESTIMONIALS } from "@/dummy-data/about-data";
+import { OFFERINGS, TESTIMONIALS } from "@/dummy-data/about-data";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Us",
@@ -35,13 +35,13 @@ export default function AboutPage() {
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
             We were founded on a simple belief: no one should be denied the
-            opportunity to connect with the Quran because of time constraints,
-            age, or feeling &ldquo;not ready.&rdquo;
+            opportunity to connect with the Quran because of time constraints
+            or cost.
           </p>
 
           <blockquote className="mx-auto mt-10 inline-block rounded-2xl border border-white/20 bg-white/10 px-8 py-5 backdrop-blur-sm">
             <p className="font-arabic text-2xl leading-relaxed text-gold">
-              طَلَبُ الْعِلْمِ فَرِيضَةٌ
+              طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ
             </p>
 
             <p className="mt-2 text-sm italic text-white/70">
@@ -50,9 +50,21 @@ export default function AboutPage() {
             </p>
 
             <footer className="mt-1 text-xs uppercase tracking-widest text-gold/60">
-              — The Prophet ﷺ
+              The Prophet ﷺ ·{" "}
+              <a
+                href="https://sunnah.com/ibnmajah:224"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 transition-colors hover:text-gold"
+              >
+                Sunan Ibn Majah 224
+              </a>
             </footer>
           </blockquote>
+
+          <p className="mx-auto mt-8 max-w-2xl text-base font-medium text-gold">
+            Age is not a barrier. Time is not a barrier. Cost is not a barrier.
+          </p>
         </div>
       </section>
 
@@ -74,50 +86,24 @@ export default function AboutPage() {
           </h2>
 
           <p className="text-lg leading-relaxed text-muted-foreground">
-            To provide accessible, high-quality Islamic education to all,
-            regardless of background, schedule, or circumstance. We believe that
-            small, consistent steps matter more than waiting for perfect
-            conditions. Your journey starts with one small step — let us take it
-            together.
+            Our mission is to provide accessible, high-quality Islamic education
+            to all, regardless of background, schedule, or circumstance. We
+            believe that small, consistent steps matter more than waiting for
+            perfect conditions. Your journey starts with one small step. Let us
+            take it together.
           </p>
 
           <blockquote className="mt-8 border-l-4 border-gold pl-6 text-left">
             <p className="text-lg italic leading-relaxed text-foreground/80">
               &ldquo;We are called The Quran Group because that is exactly what
-              we are — a group of people coming together around the
+              we are: a group of people coming together around the
               Quran.&rdquo;
             </p>
 
             <footer className="mt-2 text-sm text-muted-foreground">
-              — Hafiz Isa Khan, Founder &amp; CEO
+              Hafiz Isa Khan, Founder &amp; CEO
             </footer>
           </blockquote>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section
-        aria-label="The Quran Group statistics"
-        className="border-y border-border bg-gradient-subtle"
-      >
-        <div className="container mx-auto px-4 py-16">
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-            {STATS.map(({ icon: Icon, label, value }) => (
-              <div key={label} className="text-center">
-                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
-                  <Icon aria-hidden="true" className="h-6 w-6 text-primary" />
-                </div>
-
-                <div className="font-display text-3xl font-bold text-primary">
-                  {value}
-                </div>
-
-                <div className="mt-1 text-sm text-muted-foreground">
-                  {label}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -258,24 +244,17 @@ export default function AboutPage() {
           </h2>
 
           <p className="mb-8 text-muted-foreground">
-            Age is not a barrier. Time is not a barrier. Feeling &ldquo;not
-            ready&rdquo; is not a barrier. There is a place for you here.
+            Age is not a barrier. Time is not a barrier. Cost is not a barrier.
+            There is a place for you here.
           </p>
 
-          <div className="flex flex-col justify-center gap-3 sm:flex-row">
+          <div className="flex justify-center">
             <Link
-              href="/courses"
+              href="/register"
               className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-gradient-primary px-6 font-medium text-primary-foreground shadow-soft transition-opacity hover:opacity-95"
             >
-              Browse Courses
+              Get started
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
-            </Link>
-
-            <Link
-              href="/contact"
-              className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 font-medium transition-colors hover:bg-accent"
-            >
-              Get in Touch
             </Link>
           </div>
         </div>

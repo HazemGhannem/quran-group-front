@@ -43,22 +43,6 @@ export default function TeamMemberHero({ member }: TeamMemberHeroProps) {
                 <span>{member.role}</span>
               </div>
 
-              <div className="flex justify-center gap-8 pt-4 text-sm">
-                <div className="text-center">
-                  <div className="font-semibold text-foreground">
-                    {member.achievements.length}
-                  </div>
-                  <div className="text-muted-foreground">Achievements</div>
-                </div>
-
-                <div className="text-center">
-                  <div className="font-semibold text-foreground">
-                    {member.expertise.length}
-                  </div>
-                  <div className="text-muted-foreground">Expertise Areas</div>
-                </div>
-              </div>
-
               <div className="flex items-center justify-center gap-4 pt-4">
                 {member.email && (
                   <a

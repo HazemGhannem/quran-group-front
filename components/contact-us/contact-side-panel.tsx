@@ -48,7 +48,7 @@ export default function ContactSidePanel() {
               <p className="font-medium">Support hours</p>
 
               <p className="mt-1 text-sm text-primary-foreground/70">
-                We aim to respond within 24–48 hours.
+                We aim to respond within 24 to 48 hours.
               </p>
             </div>
           </div>

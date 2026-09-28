@@ -14,9 +14,9 @@ export function AuthShell({
   title,
   subtitle,
   children,
-  arabicVerse = "طَلَبُ الْعِلْمِ فَرِيضَةٌ",
-  verseTranslation = "Seeking knowledge is an obligation.",
-  verseReference = "— The Prophet ﷺ",
+  arabicVerse = "طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ",
+  verseTranslation = "Seeking knowledge is an obligation upon every Muslim.",
+  verseReference = "The Prophet ﷺ (Sunan Ibn Majah 224)",
 }: AuthShellProps) {
   return (
     <main className="min-h-screen lg:grid lg:grid-cols-2">
