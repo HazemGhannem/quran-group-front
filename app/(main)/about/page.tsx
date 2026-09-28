@@ -50,7 +50,7 @@ export default function AboutPage() {
             </p>
 
             <footer className="mt-1 text-xs uppercase tracking-widest text-gold/60">
-              The Prophet ﷺ ·{" "}
+              The Prophet ﷺ ·
               <a
                 href="https://sunnah.com/ibnmajah:224"
                 target="_blank"
@@ -61,10 +61,6 @@ export default function AboutPage() {
               </a>
             </footer>
           </blockquote>
-
-          <p className="mx-auto mt-8 max-w-2xl text-base font-medium text-gold">
-            Age is not a barrier. Time is not a barrier. Cost is not a barrier.
-          </p>
         </div>
       </section>
 
