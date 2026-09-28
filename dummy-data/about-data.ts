@@ -132,7 +132,7 @@ Wissam brings over 16 years of experience in Software and IT leadership.`,
     social: {
       linkedin: "https://www.linkedin.com/in/wissamayadi/",
     },
-    image: "/team/wissam-ayadi.png",
+    image: "/team/wissam-ayadi.jpg",
   },
   {
     id: "hazem-ghannem",
