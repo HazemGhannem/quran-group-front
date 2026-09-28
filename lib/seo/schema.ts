@@ -11,7 +11,7 @@ export const organizationSchema = {
   logo: `${SITE_URL}/logo.svg`,
   description:
     "Learn the Quran, Tajweed, Fiqh, and Arabic with qualified teachers.",
-  email: "contact@thequrangroup.space",
+  email: "info@thequrangroup.com",
   sameAs: [
     "https://www.facebook.com/profile.php?id=61586010052765",
     "https://www.instagram.com/thequrangroup/",

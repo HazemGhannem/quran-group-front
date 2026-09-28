@@ -61,10 +61,10 @@ export default function TeamPage() {
             </p>
 
             <Link
-              href="/contact"
+              href="/register"
               className="inline-flex items-center gap-2 rounded-lg bg-gradient-primary px-6 py-3 font-semibold text-primary-foreground shadow-soft transition-all hover:opacity-95 hover:shadow-elegant"
             >
-              Explore Opportunities
+              Get started
               <ChevronRight className="h-4 w-4" />
             </Link>
           </div>

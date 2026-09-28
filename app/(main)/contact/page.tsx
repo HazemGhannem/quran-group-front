@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/contact-us/contact-form";
-import ContactHelp from "@/components/contact-us/contact-help";
 import ContactHero from "@/components/contact-us/contact-hero";
 import ContactInfo from "@/components/contact-us/contact-info";
 import ContactSidePanel from "@/components/contact-us/contact-side-panel";
@@ -28,8 +27,6 @@ export default function ContactPage() {
           <ContactSidePanel />
         </div>
       </section>
-
-      <ContactHelp />
     </div>
   );
 }

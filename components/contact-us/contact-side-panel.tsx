@@ -1,14 +1,13 @@
-import Link from "next/link";
-import { ArrowRight, Clock, Mail } from "lucide-react";
+import { Clock, Mail } from "lucide-react";
 
 export default function ContactSidePanel() {
   return (
     <div className="relative overflow-hidden bg-primary p-8 text-primary-foreground sm:p-10 lg:p-12">
-      <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-white/5" />
-      <div className="absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-white/5" />
+      <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-gold/10" />
+      <div className="absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-gold/[0.06]" />
 
       <div className="relative flex h-full flex-col">
-        <span className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/70">
+        <span className="text-sm font-semibold uppercase tracking-wider text-gold">
           The Quran Group
         </span>
 
@@ -23,7 +22,7 @@ export default function ContactSidePanel() {
 
         <div className="mt-10 space-y-5">
           <div className="flex gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gold/15 text-gold">
               <Mail className="h-5 w-5" />
             </div>
 
@@ -31,16 +30,16 @@ export default function ContactSidePanel() {
               <p className="font-medium">Email</p>
 
               <a
-                href="mailto:contact@thequrangroup.space"
+                href="mailto:info@thequrangroup.com"
                 className="mt-1 block text-sm text-primary-foreground/70 transition-colors hover:text-primary-foreground"
               >
-                contact@thequrangroup.space
+                info@thequrangroup.com
               </a>
             </div>
           </div>
 
           <div className="flex gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gold/15 text-gold">
               <Clock className="h-5 w-5" />
             </div>
 
@@ -48,27 +47,12 @@ export default function ContactSidePanel() {
               <p className="font-medium">Support hours</p>
 
               <p className="mt-1 text-sm text-primary-foreground/70">
-                We aim to respond within 24 to 48 hours.
+                We will try our best to get back to you within a couple of days.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-auto pt-12">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <p className="text-sm leading-6 text-primary-foreground/75">
-              Looking for a course instead?
-            </p>
-
-            <Link
-              href="/courses"
-              className="mt-2 inline-flex items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-80"
-            >
-              Explore our courses
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
       </div>
     </div>
   );

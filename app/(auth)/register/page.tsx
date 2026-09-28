@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { AuthShell } from "@/components/auth/AuthShell";
+import { UnderConstructionNotice } from "@/components/auth/UnderConstructionNotice";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Label } from "@/components/ui/Label";
@@ -19,6 +20,27 @@ export default function SignUpPage() {
       title="Create an account"
       subtitle="Start your journey of sacred knowledge today."
     >
+      <UnderConstructionNotice>
+        <p>
+          The sign up form is under construction and, inshallah, will be
+          available mid October. For the time being, email
+          <a href="mailto:info@thequrangroup.com" className="font-medium text-primary underline underline-offset-2 hover:text-primary/80">
+            info@thequrangroup.com
+          </a>
+          .
+        </p>
+        <p>
+          In the meantime, please use this form:
+          <a
+            href="https://forms.gle/v2CPd26ZR4xkR3QU7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
+          >
+            The Quran Group Admissions Form
+          </a>
+        </p>
+      </UnderConstructionNotice>
       <form className="space-y-5">
         {/* Account type */}
         {/* <div className="space-y-2">
@@ -100,6 +122,7 @@ export default function SignUpPage() {
         {/* Submit */}
         <Button
           type="submit"
+          disabled
           className="h-11 w-full bg-gradient-primary shadow-soft"
         >
           Create account
@@ -107,7 +130,7 @@ export default function SignUpPage() {
         </Button>
       </form>
       <p className="mt-6 text-center text-sm text-muted-foreground">
-        Already have an account?{" "}
+        Already have an account?
         <Link
           href="/login"
           className="font-medium text-primary hover:underline"

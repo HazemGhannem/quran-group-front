@@ -32,6 +32,6 @@ export async function submitContactForm(
 
   return {
     status: "success",
-    message: "Thanks, your message is with us. We reply within 24 to 48 hours.",
+    message: "Thanks, your message is with us. We will try our best to get back to you within a couple of days.",
   };
 }

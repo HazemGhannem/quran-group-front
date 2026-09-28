@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { AuthShell } from "@/components/auth/AuthShell";
+import { UnderConstructionNotice } from "@/components/auth/UnderConstructionNotice";
 import { Label } from "@/components/ui/Label";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
@@ -19,6 +20,16 @@ export default function LoginPage() {
       title="Welcome back"
       subtitle="Continue your journey of sacred knowledge."
     >
+      <UnderConstructionNotice>
+        <p>
+          The sign in page is under construction and, inshallah, will be
+          available mid October. For the time being, email
+          <a href="mailto:info@thequrangroup.com" className="font-medium text-primary underline underline-offset-2 hover:text-primary/80">
+            info@thequrangroup.com
+          </a>
+          .
+        </p>
+      </UnderConstructionNotice>
       <form className="space-y-5">
         {/* Email */}
         <div className="space-y-2">
@@ -58,6 +69,7 @@ export default function LoginPage() {
         {/* Submit */}
         <Button
           type="submit"
+          disabled
           className="h-11 w-full bg-gradient-primary shadow-soft"
         >
           Sign in
@@ -67,7 +79,7 @@ export default function LoginPage() {
 
       {/* Register */}
       <p className="mt-6 text-center text-sm text-muted-foreground">
-        New here?{" "}
+        New here?
         <Link
           href="/register"
           className="font-medium text-primary hover:underline"

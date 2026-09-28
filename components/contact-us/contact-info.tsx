@@ -5,8 +5,8 @@ const contactInfo = [
     icon: Mail,
     title: "Email Us",
     description: "For general questions and support",
-    value: "contact@thequrangroup.space",
-    href: "mailto:contact@thequrangroup.space",
+    value: "info@thequrangroup.com",
+    href: "mailto:info@thequrangroup.com",
   },
   {
     icon: MessageCircle,
@@ -18,8 +18,8 @@ const contactInfo = [
   {
     icon: Clock,
     title: "Response Time",
-    description: "We usually respond within",
-    value: "24 to 48 hours",
+    description: "We will try our best to get back to you",
+    value: "Within a couple of days",
   },
 ];
 export default function ContactInfo() {
@@ -29,8 +29,8 @@ export default function ContactInfo() {
         {contactInfo.map((item) => {
           const Icon = item.icon;
           const content = (
-            <div className="group h-full rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg">
-              <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+            <div className="group h-full rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg">
+              <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-gold/10 text-gold-ink transition-colors group-hover:bg-gold group-hover:text-gold-foreground">
                 <Icon className="h-5 w-5" />
               </div>
               <h2 className="font-display text-lg font-semibold text-foreground">

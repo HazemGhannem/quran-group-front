@@ -29,7 +29,7 @@ export default function ContactForm() {
   return (
     <div className="p-6 sm:p-10 lg:p-12">
       <div className="max-w-xl">
-        <span className="text-sm font-semibold uppercase tracking-wider text-primary">
+        <span className="text-sm font-semibold uppercase tracking-wider text-gold-ink">
           Send us a message
         </span>
 
