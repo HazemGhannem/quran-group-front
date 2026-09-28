@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ArrowLeft, Mail } from "lucide-react";
-import { LinkedInIcon } from "@/components/icons/social";
+import { ArrowLeft, Globe, Mail } from "lucide-react";
+import { GitHubIcon, LinkedInIcon } from "@/components/icons/social";
+import TeamAvatar from "@/components/team/team-avatar";
 import { roleIcons, type TeamMember } from "@/dummy-data/about-data";
 
 interface TeamMemberHeroProps {
@@ -28,9 +29,12 @@ export default function TeamMemberHero({ member }: TeamMemberHeroProps) {
         <div className="container mx-auto px-4 py-16 md:py-24">
           <div className="mx-auto max-w-3xl animate-fade-up">
             <div className="mb-8 flex justify-center">
-              <div className="flex h-32 w-32 items-center justify-center rounded-full bg-gradient-primary text-6xl font-semibold text-primary-foreground shadow-elegant">
-                {member.initials}
-              </div>
+              <TeamAvatar
+                member={member}
+                sizes="144px"
+                priority
+                className="h-36 w-36 text-5xl ring-2 ring-gold/50 ring-offset-4 ring-offset-background"
+              />
             </div>
 
             <div className="space-y-4 text-center">
@@ -63,6 +67,30 @@ export default function TeamMemberHero({ member }: TeamMemberHeroProps) {
                     aria-label="LinkedIn"
                   >
                     <LinkedInIcon className="h-5 w-5 transition-colors duration-200 group-hover:text-primary" />
+                  </a>
+                )}
+
+                {member.social.github && (
+                  <a
+                    href={member.social.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all duration-200 hover:border-primary/30 hover:bg-primary/5"
+                    aria-label="GitHub"
+                  >
+                    <GitHubIcon className="h-5 w-5 transition-colors duration-200 group-hover:text-primary" />
+                  </a>
+                )}
+
+                {member.social.portfolio && (
+                  <a
+                    href={member.social.portfolio}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all duration-200 hover:border-primary/30 hover:bg-primary/5"
+                    aria-label="Portfolio website"
+                  >
+                    <Globe className="h-5 w-5 transition-colors duration-200 group-hover:text-primary" />
                   </a>
                 )}
               </div>

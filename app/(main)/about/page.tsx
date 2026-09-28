@@ -97,7 +97,7 @@ export default function AboutPage() {
             </p>
 
             <footer className="mt-2 text-sm text-muted-foreground">
-              Hafiz Isa Khan, Founder &amp; CEO
+              Hafiz Isa Khan, Founder &amp; Director
             </footer>
           </blockquote>
         </div>

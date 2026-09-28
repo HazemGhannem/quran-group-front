@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import TeamAvatar from "@/components/team/team-avatar";
 import { roleIcons, type TeamMember } from "@/dummy-data/about-data";
 
 interface TeamMemberCardProps {
@@ -16,16 +17,18 @@ export default function TeamMemberCard({
   return (
     <Link href={`/team/${member.id}`} className="group">
       <article
-        className="relative h-full overflow-hidden rounded-2xl border border-border bg-card p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-elegant"
+        className="relative h-full overflow-hidden rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-card hover:shadow-elegant"
         style={{ animationDelay: `${index * 50}ms` }}
       >
         {/* Decorative background */}
         <div className="absolute inset-0 bg-gradient-primary opacity-0 transition-opacity duration-300 group-hover:opacity-5" />
 
         {/* Avatar */}
-        <div className="relative z-10 mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-primary text-2xl font-semibold text-primary-foreground shadow-soft transition-shadow duration-300 group-hover:shadow-elegant">
-          {member.initials}
-        </div>
+        <TeamAvatar
+          member={member}
+          sizes="128px"
+          className="z-10 mx-auto mb-6 h-32 w-32 text-3xl ring-2 ring-transparent ring-offset-4 ring-offset-background transition-all duration-300 group-hover:ring-gold/60 group-hover:ring-offset-card"
+        />
 
         {/* Name */}
         <h3 className="font-display text-2xl font-semibold text-foreground transition-colors duration-300 group-hover:text-primary">

@@ -71,6 +71,6 @@ export const FEATURED_SCHOLARS: Scholar[] = TEAM.slice(0, 4).map((member) => ({
   id: member.id,
   fullName: member.name,
   bio: member.bio,
-  specialization: member.expertise[0] ?? member.role,
+  specialization: member.expertise?.[0] ?? member.role,
   avatarUrl: member.image ?? null,
 }));

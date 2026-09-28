@@ -15,14 +15,18 @@ export default function TeamMemberCta({ member }: TeamMemberCtaProps) {
           </h2>
 
           <p className="mb-8 text-muted-foreground">
-            Reach out to {member.name.split(" ")[0]} directly at
-            {member.email && (
-              <a
-                href={`mailto:${member.email}`}
-                className="ml-1 font-medium text-primary transition-colors hover:text-primary/80"
-              >
-                {member.email}
-              </a>
+            {member.email ? (
+              <>
+                Reach out to {member.name.split(" ")[0]} directly at
+                <a
+                  href={`mailto:${member.email}`}
+                  className="ml-1 font-medium text-primary transition-colors hover:text-primary/80"
+                >
+                  {member.email}
+                </a>
+              </>
+            ) : (
+              "Get in touch with our team and we will get back to you."
             )}
           </p>
 

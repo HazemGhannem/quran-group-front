@@ -6,19 +6,13 @@ import {
   Heart,
   Users,
   Award,
-  PenLine,
-  Share2,
+  Cpu,
   Code,
-  Palette,
+  ClipboardList,
   LucideIcon,
 } from "lucide-react";
 
-export type TeamRole =
-  | "founder"
-  | "content-writer"
-  | "social-manager"
-  | "developer"
-  | "designer";
+export type TeamRole = "founder" | "cto" | "developer" | "operations" | "admin";
 
 export interface TeamMember {
   id: string;
@@ -26,18 +20,22 @@ export interface TeamMember {
   role: string;
   roleType: TeamRole;
   initials: string;
-  email: string;
+  /** Short line shown on the team card. */
   bio: string;
+  /** Full intro; blank lines split paragraphs. */
   longBio: string;
-  expertise: string[];
   social: {
     twitter?: string;
     linkedin?: string;
     github?: string;
+    portfolio?: string;
   };
+  /** Photo in public/team, e.g. "/team/isa-khan.jpg". Falls back to initials if the file is missing. */
   image?: string;
-  joinedDate: string;
-  achievements: string[];
+  email?: string;
+  expertise?: string[];
+  achievements?: string[];
+  joinedDate?: string;
   quote?: string;
 }
 
@@ -107,178 +105,96 @@ export const TESTIMONIALS = [
 
 export const TEAM: TeamMember[] = [
   {
+    id: "isa-khan",
+    name: "Isa Khan",
+    role: "Founder & Director",
+    roleType: "founder",
+    initials: "IK",
+    bio: "Founder of The Quran Group, teaching free hifdh classes for Sadaqah Jariyah.",
+    longBio: `I'm Isa, the founder of The Quran Group. After the memorisation of the Quran, I started teaching a few free hifdh classes for Sadaqah Jariyah, inspired by my teacher who also taught me for free. That grew into what The Quran Group is today: free daily classes for Quran, Arabic and the Islamic sciences, taught by volunteer scholars to students across six continents.
+
+I built the first rough platform myself, but alhamdulillah our team is responsible for the current platform. I am studying Business Economics at the University of Liverpool, and completing my ijazah and my Alim class at Al Balagh Academy.`,
+    social: {
+      linkedin: "https://www.linkedin.com/in/isa-khan-9b9a07204/",
+    },
+    image: "/team/isa-khan.png",
+  },
+  {
+    id: "wissam-ayadi",
+    name: "Wissam Ayadi",
+    role: "CTO",
+    roleType: "cto",
+    initials: "WA",
+    bio: "Driving our mission forward in the digital space, with over 16 years in software and IT leadership.",
+    longBio: `Wissam has joined The Quran Group as CTO to drive our mission forward in the digital space.
+
+Wissam brings over 16 years of experience in Software and IT leadership.`,
+    social: {
+      linkedin: "https://www.linkedin.com/in/wissamayadi/",
+    },
+    image: "/team/wissam-ayadi.png",
+  },
+  {
     id: "hazem-ghannem",
     name: "Hazem Ghannem",
-    role: "Founder & CEO",
-    roleType: "founder",
-    initials: "HG",
-    email: "hazem@qurangroup.com",
-    bio: "Visionary leader building sacred knowledge platforms.",
-    longBio: `Hazem is a passionate software engineer and Islamic scholar dedicated to making Quranic education accessible to everyone worldwide. With expertise in full-stack development and a deep commitment to Islamic values, he founded The Quran Group to create a bridge between modern technology and sacred knowledge.
-
-His vision is to democratize Islamic education through innovative digital platforms that respect cultural values while leveraging cutting-edge technology. Hazem believes that technology should serve humanity and strengthen our connection to our faith.
-
-Outside of work, Hazem enjoys mentoring young developers, contributing to open-source projects, and spending time in Quranic study.`,
-    expertise: [
-      "Full-Stack Development",
-      "Platform Architecture",
-      "Islamic Education",
-      "Team Leadership",
-      "Product Strategy",
-      "Community Building",
-    ],
-    social: {
-      twitter: "https://twitter.com/hazemghannem",
-      linkedin: "https://linkedin.com/in/hazemghannem",
-      github: "https://github.com/HazemGhannem",
-    },
-    joinedDate: "2024-01-01",
-    achievements: [
-      "Founded The Quran Group with vision to democratize Islamic education",
-      "Built scalable platform serving 10,000+ students",
-      "Established partnerships with 50+ Islamic scholars",
-      "Developed innovative video streaming infrastructure",
-    ],
-    quote:
-      "Technology should serve humanity and strengthen our connection to our faith.",
-  },
-  {
-    id: "fatima-khalil",
-    name: "Fatima Khalil",
-    role: "Content Writer",
-    roleType: "content-writer",
-    initials: "FK",
-    email: "fatima@qurangroup.com",
-    bio: "Creating meaningful content that resonates with learners.",
-    longBio: `Fatima is a skilled content writer with a passion for Islamic knowledge and education. With over 5 years of experience in educational content creation, she specializes in making complex Islamic concepts accessible and engaging for diverse audiences.
-
-Her approach combines scholarly accuracy with contemporary language, ensuring that both traditional learners and modern readers find value in every piece. Fatima works closely with Islamic scholars to ensure all content meets the highest standards of authenticity and understanding.
-
-She is particularly passionate about bridging generational gaps in Islamic education and making classical Islamic wisdom relevant to today's challenges.`,
-    expertise: [
-      "Content Strategy",
-      "Educational Writing",
-      "Islamic Studies",
-      "Research",
-      "Curriculum Development",
-      "Audience Engagement",
-    ],
-    social: {
-      linkedin: "https://linkedin.com/in/fatima-khalil",
-    },
-    joinedDate: "2024-02-15",
-    achievements: [
-      "Created 200+ articles on Quranic studies and Islamic sciences",
-      "Developed curriculum for 15+ courses",
-      "Mentored 20+ aspiring Islamic scholars",
-      "Published research on digital Islamic education",
-    ],
-    quote:
-      "Education is the bridge between tradition and modernity. We must build it with care.",
-  },
-  {
-    id: "ahmed-hassan",
-    name: "Ahmed Hassan",
-    role: "Social Media Manager",
-    roleType: "social-manager",
-    initials: "AH",
-    email: "ahmed@qurangroup.com",
-    bio: "Building connections and growing our community online.",
-    longBio: `Ahmed is a dynamic social media strategist with a talent for building engaged communities around shared values. With expertise in digital marketing and community management, he has grown The Quran Group's online presence to reach over 100,000 followers across platforms.
-
-His strategy focuses on authentic engagement, meaningful conversations, and creating content that inspires action. Ahmed believes in the power of social media to connect believers across the globe and strengthen the bonds of our global Islamic community.
-
-He is constantly exploring new ways to leverage digital platforms for education and connection without compromising on Islamic values.`,
-    expertise: [
-      "Social Media Strategy",
-      "Community Management",
-      "Content Creation",
-      "Digital Marketing",
-      "Analytics",
-      "Brand Building",
-    ],
-    social: {
-      twitter: "https://twitter.com/ahmed-hassan",
-      linkedin: "https://linkedin.com/in/ahmed-hassan",
-    },
-    joinedDate: "2024-03-10",
-    achievements: [
-      "Grew social media following from 0 to 100K+",
-      "Created viral campaigns reaching 1M+ impressions",
-      "Built community of 50K+ engaged members",
-      "Coordinated 30+ successful campaigns",
-    ],
-    quote:
-      "Community is built on authentic connections and shared values. Everything else follows from that.",
-  },
-  {
-    id: "surah-ali",
-    name: "Surah Ali",
-    role: "Lead Developer",
+    role: "Software Engineer",
     roleType: "developer",
-    initials: "SA",
-    email: "surah@qurangroup.com",
-    bio: "Building the technical foundation for Islamic education.",
-    longBio: `Surah is an experienced full-stack developer with a passion for creating technology that serves communities. With expertise in modern web technologies, real-time systems, and scalable architecture, she has built the technical backbone of The Quran Group's platform.
+    initials: "HG",
+    bio: "I write the code that keeps The Quran Group's classes one click away.",
+    longBio: `I'm Hazem, a full-stack software engineer and the one who builds and looks after The Quran Group's platform, from the pages you're reading right now to everything running behind them.
 
-Her focus is on creating robust, accessible, and performant systems that can serve diverse users across the globe. Surah believes that good technology should be invisible. It should simply enable people to connect with knowledge and each other.
-
-She is an advocate for open-source software and regularly contributes to projects that advance the field of digital education.`,
-    expertise: [
-      "Full-Stack Development",
-      "System Architecture",
-      "Real-Time Systems",
-      "Performance Optimization",
-      "Database Design",
-      "DevOps",
-    ],
+What drives me is simple: nobody should miss out on learning the Quran because of where they live or what's on their calendar. If the right code can put a free class one click away for someone on the other side of the world, that's code worth writing.`,
     social: {
-      github: "https://github.com/surah-ali",
-      linkedin: "https://linkedin.com/in/surah-ali",
+      linkedin: "https://www.linkedin.com/in/hazem-ghannem-6058b71a6",
+      github: "https://github.com/HazemGhannem",
+      portfolio: "https://ghannemhazem.com",
     },
-    joinedDate: "2024-02-01",
-    achievements: [
-      "Architected platform supporting 50K+ concurrent users",
-      "Implemented real-time video streaming with 99.9% uptime",
-      "Reduced page load time by 70%",
-      "Led team of 5 developers",
-    ],
-    quote:
-      "Technology is at its best when it disappears and lets knowledge flow freely.",
+    image: "/team/hazem-ghannem.png",
   },
   {
-    id: "layla-mansour",
-    name: "Layla Mansour",
-    role: "UI/UX Designer",
-    roleType: "designer",
-    initials: "LM",
-    email: "layla@qurangroup.com",
-    bio: "Designing experiences that inspire and educate.",
-    longBio: `Layla is a thoughtful designer who believes that beautiful design should serve purpose, not just aesthetics. With background in interaction design and accessibility, she has crafted The Quran Group's interfaces to be both beautiful and inclusive.
+    id: "annie-situmbeko",
+    name: "Annie Situmbeko",
+    role: "Head of Operations",
+    roleType: "operations",
+    initials: "AS",
+    bio: "Supporting the team with administration, coordination and better internal processes.",
+    longBio: `I'm Annie, with an interest in organisation, operations, and making things work better behind the scenes. I enjoy coordinating people, organising processes, solving problems, and creating systems that make day-to-day work easier.
 
-Her design philosophy centers on Islamic aesthetics and principles: harmony, balance, purpose, and accessibility. She works closely with scholars, educators, and community members to ensure every pixel serves the mission of making Islamic education accessible and inspiring.
+At The Quran Group, I work in Operations, supporting the team with administration, coordination, task management, and improving our internal processes. I enjoy working with different people across the organisation and finding practical solutions when something isn't working as it should.
 
-Layla is passionate about inclusive design and ensures that users of all abilities can access our platform with dignity and ease.`,
-    expertise: [
-      "UI/UX Design",
-      "Accessibility Design",
-      "User Research",
-      "Islamic Aesthetics",
-      "Design Systems",
-      "Prototyping",
-    ],
+Outside of The Quran Group, I'm developing my career in operations and executive support while exploring technology, automation, and entrepreneurship.`,
     social: {
-      linkedin: "https://linkedin.com/in/layla-mansour",
+      linkedin: "https://www.linkedin.com/in/annie-situmbeko-015532356",
     },
-    joinedDate: "2024-02-20",
-    achievements: [
-      "Designed complete design system with 100+ components",
-      "Improved user satisfaction score by 45%",
-      "Achieved WCAG AAA compliance",
-      "Led design workshops with 200+ educators",
-    ],
-    quote:
-      "Design should be a bridge between intention and understanding. Every detail matters.",
+    image: "/team/annie-situmbeko.jpg",
+  },
+  {
+    id: "ali-hachim-prati",
+    name: "Ali Hachim Prati",
+    role: "Head of Men's Administration",
+    roleType: "admin",
+    initials: "AP",
+    bio: "Coordinating and organising the men's classes and supporting the team day to day.",
+    longBio: `I'm Ali, and I'm currently working in finance in Luxembourg. I've been involved in community activities for several years, and I'm now serving as Head of Men's Administration, where I help coordinate and organise the men's classes and support the team in its day-to-day needs.`,
+    social: {
+      linkedin: "https://www.linkedin.com/in/ali-hachim-prati-206a21236",
+    },
+    image: "/team/ali-hachim-prati.png",
+  },
+  {
+    id: "muneera-jama",
+    name: "Muneera Jama",
+    role: "Operations Designer & Women's Admin",
+    roleType: "operations",
+    initials: "MJ",
+    bio: "Designing and building operations that run smoothly, and supporting the women's admin team.",
+    longBio: `I'm Muneera, and when I'm not working my day job in retail, I'm designing and building operations to make them run smoothly.
+
+In my role, I built the organisation's Airtable-based attendance tracker and supported the women's admin team with day-to-day tasks.`,
+    social: {
+      linkedin: "https://www.linkedin.com/in/muneerajama",
+    },
+    image: "/team/muneera-jama.jpg",
   },
 ];
 
@@ -288,8 +204,8 @@ export const getTeamMemberById = (id: string): TeamMember | undefined => {
 
 export const roleIcons: Record<TeamRole, LucideIcon> = {
   founder: Award,
-  "content-writer": PenLine,
-  "social-manager": Share2,
+  cto: Cpu,
   developer: Code,
-  designer: Palette,
+  operations: ClipboardList,
+  admin: Users,
 };

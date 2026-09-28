@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TeamAvatar from "@/components/team/team-avatar";
 import type { TeamMember } from "@/dummy-data/about-data";
 
 interface RelatedTeamMembersProps {
@@ -24,10 +25,12 @@ export default function RelatedTeamMembers({
         <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {relatedMembers.map((member) => (
             <Link key={member.id} href={`/team/${member.id}`} className="group">
-              <article className="rounded-2xl border border-border bg-card p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-elegant">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-primary text-lg font-semibold text-primary-foreground shadow-soft">
-                  {member.initials}
-                </div>
+              <article className="rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-card hover:shadow-elegant">
+                <TeamAvatar
+                  member={member}
+                  sizes="80px"
+                  className="mx-auto mb-4 h-20 w-20 text-xl"
+                />
 
                 <h3 className="font-display text-lg font-semibold text-foreground">
                   {member.name}

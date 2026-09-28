@@ -8,6 +8,8 @@ interface TeamMemberExpertiseProps {
 export default function TeamMemberExpertise({
   member,
 }: TeamMemberExpertiseProps) {
+  if (!member.expertise?.length) return null;
+
   return (
     <div className="animate-fade-up" style={{ animationDelay: "150ms" }}>
       <div className="mb-6 flex items-center gap-2">
