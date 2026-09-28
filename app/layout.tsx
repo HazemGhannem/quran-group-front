@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Aref_Ruqaa, Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
+import Analytics from "@/components/analytics/Analytics";
+import CookieConsent from "@/components/analytics/CookieConsent";
 
 const SITE_URL = "https://thequrangroup.space";
 
@@ -89,7 +91,14 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${inter.variable} ${cormorant.variable} ${arefRuqaa.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+
+        {/* Both self-gate: nothing renders without NEXT_PUBLIC_GTM_ID, and
+            GTM does not load until consent is granted. */}
+        <CookieConsent />
+        <Analytics />
+      </body>
     </html>
   );
 }

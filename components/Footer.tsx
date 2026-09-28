@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import CookieSettingsLink from "@/components/analytics/CookieSettingsLink";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -201,6 +202,10 @@ export default function Footer() {
               >
                 Terms
               </Link>
+
+              <span>&middot;</span>
+
+              <CookieSettingsLink />
             </div>
           </div>
 
