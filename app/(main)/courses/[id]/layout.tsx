@@ -17,8 +17,7 @@ import {
 import { courses } from "@/dummy-data/course-data";
 import CourseTabs from "@/components/courses/course-tabs";
 
-// Every course is known at build time, so prerender all of them instead of
-// server-rendering each on first request.
+// Prerender every course at build time.
 export function generateStaticParams() {
   return courses.map((course) => ({ id: course.id }));
 }

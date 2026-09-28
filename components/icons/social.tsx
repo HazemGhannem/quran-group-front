@@ -1,14 +1,6 @@
 import type { SVGProps } from "react";
 
-/**
- * Brand glyphs for the social links in the footer and team profiles.
- *
- * Inlined rather than pulled from an icon package: lucide (already a
- * dependency) dropped brand icons in v1, and adding a second icon library for
- * five glyphs is not worth the install or the bundle.
- *
- * Paths are 24x24, single-path, and inherit `currentColor`.
- */
+/** Inline brand icons (lucide has none). 24x24, use currentColor. */
 type IconProps = SVGProps<SVGSVGElement>;
 
 function BrandIcon({ path, ...props }: IconProps & { path: string }) {

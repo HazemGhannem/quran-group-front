@@ -20,11 +20,7 @@ import type {
   CourseLevel,
 } from "@/dummy-data/course-data";
 
-/**
- * Filters are plain links that rewrite the query string, so this whole tree
- * stays a Server Component — no `useState`, no client bundle, and every filter
- * combination is a shareable, crawlable URL.
- */
+/** Filters are plain links, so this stays a Server Component. */
 
 const categories: { value: CourseCategory | "all"; label: string; icon: LucideIcon }[] = [
   { value: "all", label: "All Courses", icon: Sparkles },

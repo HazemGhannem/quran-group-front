@@ -42,8 +42,7 @@ export default function ContactForm() {
           possible.
         </p>
 
-        {/* action={} posts to a Server Action — without it the browser would
-            GET this page with every field in the query string. */}
+        {/* Posts to a Server Action. */}
         <form action={formAction} className="mt-8 space-y-5">
           {/* Name + Email */}
           <div className="grid gap-5 sm:grid-cols-2">

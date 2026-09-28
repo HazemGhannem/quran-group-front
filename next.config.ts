@@ -20,15 +20,11 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
 
   experimental: {
-    // Tailwind is atomic, so the stylesheet is small and highly cacheable with
-    // the HTML. Inlining it removes the render-blocking CSS round-trip that
-    // Lighthouse flagged as the head of the LCP dependency chain.
+    // Inline CSS to skip the render-blocking stylesheet request.
     inlineCss: true,
   },
 
-  // Courses are hidden for now: any /courses URL (including course detail
-  // pages) goes back to the home page. Temporary (307) so search engines
-  // don't cache it; delete this block to bring the courses pages back.
+  // Courses hidden for now: /courses redirects home. Remove to restore.
   async redirects() {
     return [
       { source: "/courses", destination: "/", permanent: false },

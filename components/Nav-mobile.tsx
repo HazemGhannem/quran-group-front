@@ -11,8 +11,7 @@ export default function MobileNav() {
   const menuRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
 
-  // Derived, not stored: navigating to a new route closes the menu without an
-  // effect, so there is no cascading re-render on every navigation.
+  // Menu closes automatically when the route changes.
   const isOpen = openedAt === pathname;
 
   const closeMenu = () => setOpenedAt(null);

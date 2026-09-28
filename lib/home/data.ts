@@ -1,16 +1,4 @@
-// lib/home/data.ts
-//
-// Home-page content, DERIVED from the single course catalogue rather than
-// duplicated alongside it.
-//
-// The previous version hand-wrote a parallel list of featured courses with its
-// own ids ("tajweed-fundamentals", "quranic-arabic", …). None of those ids
-// existed in `dummy-data/course-data.ts`, so every featured card on the home
-// page linked to a 404. Deriving removes that whole class of drift: if a
-// course is renamed or removed, the home page follows automatically.
-//
-// When a real backend arrives, replace `courses` / `TEAM` below with the
-// data-access calls; the exported shapes stay the same.
+// Home-page data, derived from the course catalogue and team data.
 
 import { courses, type Course } from "@/dummy-data/course-data";
 import { TEAM } from "@/dummy-data/about-data";

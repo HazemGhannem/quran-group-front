@@ -1,19 +1,4 @@
-/**
- * Analytics consent store.
- *
- * UK GDPR / PECR require consent *before* non-essential analytics cookies are
- * set, so nothing Google-related loads until `readConsent()` returns "granted".
- *
- * Why a cookie read in the browser rather than `cookies()` from next/headers:
- * calling `cookies()` in the root layout opts the entire app out of static
- * rendering. That would turn all 46 prerendered pages into per-request renders
- * and undo the performance work. Consent is only needed client-side, so it is
- * read client-side.
- *
- * Exposed as an external store so components can subscribe with
- * `useSyncExternalStore` — that avoids a hydration mismatch (the server has no
- * idea what the visitor chose) without a setState-in-effect.
- */
+/** Analytics consent, stored in a cookie and read client-side. Nothing loads until "granted". */
 
 export const CONSENT_COOKIE = "tqg_analytics_consent";
 
@@ -24,16 +9,7 @@ const CHANGE_EVENT = "tqg:consent-change";
 
 export type Consent = "granted" | "denied";
 
-/**
- * Three states, not two. "unknown" is what the server and the hydration pass
- * see, because a statically cached page is shared by every visitor and cannot
- * know who is reading it.
- *
- * Rendering nothing for "unknown" means a returning visitor who already chose
- * never sees the banner flash, and a visitor without JavaScript never sees a
- * banner they could not dismiss (GTM cannot load for them either, so the two
- * stay consistent).
- */
+/** "unknown" = server render / before hydration; null = not decided yet. */
 export type ConsentState = Consent | null | "unknown";
 
 /** "granted" | "denied" once chosen; null while the visitor has not decided. */
@@ -42,7 +18,8 @@ export function readConsent(): ConsentState {
 
   try {
     const match = document.cookie.match(
-      new RegExp(`(?:^|;\s*)${CONSENT_COOKIE}=(granted|denied)`)
+      // `\\s` is needed in a template literal.
+      new RegExp(`(?:^|;\\s*)${CONSENT_COOKIE}=(granted|denied)`)
     );
 
     return match ? (match[1] as Consent) : null;
@@ -61,8 +38,7 @@ export function writeConsent(value: Consent): void {
     document.cookie =
       `${CONSENT_COOKIE}=${value}; Max-Age=${MAX_AGE_SECONDS}; Path=/; SameSite=Lax${secure}`;
   } catch {
-    // If we cannot persist the choice, still notify listeners so the current
-    // page reflects it for this session.
+    // Still notify listeners if the cookie cannot be saved.
   }
 
   window.dispatchEvent(new Event(CHANGE_EVENT));
@@ -86,12 +62,7 @@ export function subscribeConsent(onChange: () => void): () => void {
   return () => window.removeEventListener(CHANGE_EVENT, onChange);
 }
 
-/**
- * The server cannot know the visitor's choice without reading cookies, which
- * would force dynamic rendering. It reports "unknown" so both the prerendered
- * HTML and the hydration pass agree, and the real value is picked up straight
- * after hydration.
- */
+/** The server never knows the choice, so it reports "unknown". */
 export function getServerConsent(): ConsentState {
   return "unknown";
 }

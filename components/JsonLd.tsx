@@ -1,9 +1,4 @@
-/**
- * Renders a JSON-LD structured-data block.
- *
- * `<` is escaped to its unicode form so a string in the payload can never
- * close the script tag — the sanitisation Next's JSON-LD guide calls for.
- */
+/** Renders JSON-LD; `<` is escaped so the payload cannot close the script tag. */
 export default function JsonLd({ data }: { data: Record<string, unknown> }) {
   return (
     <script

@@ -12,8 +12,7 @@ const inter = Inter({
   display: "swap",
 });
 
-// Display face. Only the weights actually used by headings (500/600/700) —
-// 400 and every italic were being downloaded and never rendered.
+// Only the heading weights actually used.
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-cormorant",
@@ -21,8 +20,7 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-// Arabic display face. Nothing renders it bold, and it is never the LCP
-// element, so we ship one weight and keep it out of the preload budget.
+// Arabic face: one weight, not preloaded.
 const arefRuqaa = Aref_Ruqaa({
   subsets: ["arabic"],
   variable: "--font-aref-ruqaa",
@@ -94,8 +92,7 @@ export default function RootLayout({
       <body>
         {children}
 
-        {/* Both self-gate: nothing renders without NEXT_PUBLIC_GTM_ID, and
-            GTM does not load until consent is granted. */}
+        {/* Analytics load only with NEXT_PUBLIC_GTM_ID set and consent given. */}
         <CookieConsent />
         <Analytics />
       </body>

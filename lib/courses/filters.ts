@@ -42,10 +42,7 @@ function one(value: string | string[] | undefined): string | undefined {
   return Array.isArray(value) ? value[0] : value;
 }
 
-/**
- * Parse URL search params into filters, falling back to "all" for anything
- * missing or not in the allowed set. Never throws on hostile input.
- */
+/** Parse search params into filters; invalid values fall back to "all". */
 export function parseFilters(params: RawSearchParams): CourseFilters {
   const pick = <T extends string>(
     raw: string | undefined,
@@ -91,10 +88,7 @@ export function hasActiveFilters(filters: CourseFilters): boolean {
   );
 }
 
-/**
- * Build a `/courses` href from the current filters plus an override.
- * Defaults are omitted so the canonical unfiltered URL stays clean.
- */
+/** Build a /courses href from the current filters plus an override. */
 export function buildCoursesHref(
   filters: CourseFilters,
   override: Partial<CourseFilters>

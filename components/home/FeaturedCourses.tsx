@@ -54,8 +54,7 @@ export default function FeaturedCourses({
               <div className="relative h-48 overflow-hidden">
                 {course.thumbnailUrl ? (
                   <>
-                    {/* Only the first (likely above-the-fold) card is eager/priority;
-                        the rest lazy-load, which is what Lighthouse wants to see. */}
+                    {/* Only the first card loads eagerly. */}
                     <Image
                       src={course.thumbnailUrl}
                       alt={`${course.title} course cover`}

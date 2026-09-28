@@ -11,30 +11,10 @@ import {
 } from "@/lib/analytics/consent";
 
 /**
- * ─────────────────────────────────────────────────────────────────────────
- *  STUB — functional, but the copy and the policy link are placeholders.
- *
- *  Before this goes to production:
- *    1. Write the real /privacy page (it currently says "being prepared")
- *       and describe what Google Tag Manager collects.
- *    2. Replace the wording below with copy you are happy to stand behind.
- *    3. Decide whether "Decline" is enough, or whether you need per-category
- *       choices (analytics / marketing / preferences). If tags beyond
- *       analytics ever go into the GTM container, per-category is expected.
- *
- *  What is already correct and worth keeping:
- *    - Nothing loads before a choice is made.
- *    - Declining is exactly as easy as accepting (same size, same prominence).
- *    - The choice can be withdrawn later via the footer's "Cookie settings".
- * ─────────────────────────────────────────────────────────────────────────
+ * TODO before production: real /privacy page, final banner copy, and
+ * per-category choices if GTM ever holds more than analytics.
  */
-/**
- * A solid surface, deliberately not `bg-card/95 backdrop-blur-md`. A blurred
- * fixed overlay makes the compositor re-blur everything behind it, which
- * measured as roughly 110ms of extra main-thread blocking on the home page
- * under Lighthouse's 4x CPU throttling. The shadow gives the same separation
- * for free.
- */
+/** Solid background (no backdrop blur) for better performance. */
 const PANEL_CLASS =
   "fixed inset-x-0 bottom-0 z-[60] border-t border-border bg-card " +
   "shadow-[0_-4px_24px_-10px_rgba(0,0,0,0.3)]";
@@ -49,9 +29,7 @@ export default function CookieConsent() {
   // Nothing to ask about if analytics is not configured for this environment.
   if (!GTM_ID) return null;
 
-  // "unknown" = server render / pre-hydration. Render nothing so the banner
-  // never flashes for someone who already decided.
-  // Anything other than null means a choice is already on record.
+  // Hide until hydrated, and once a choice is recorded.
   if (consent !== null) return null;
 
   return (

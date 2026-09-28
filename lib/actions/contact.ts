@@ -1,17 +1,9 @@
 "use server";
 
-// Only async functions may be exported from a "use server" module — the type
-// and the initial value live in ./contact-state.
+// Types and initial state live in ./contact-state.
 import type { ContactFormState } from "./contact-state";
 
-/**
- * Handles the contact form submission.
- *
- * There is no mail backend wired up yet, so this validates the payload and
- * reports back. Replace the marked section with the real delivery call
- * (transactional email, CRM, ticketing) when that exists — the signature and
- * the client contract stay the same.
- */
+/** Validates the contact form. TODO: send the message once a mail backend exists. */
 export async function submitContactForm(
   _prevState: ContactFormState,
   formData: FormData

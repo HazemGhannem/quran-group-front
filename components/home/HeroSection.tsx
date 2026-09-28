@@ -47,8 +47,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* HeroBook is a pure server component (no hooks, no state) — it
-              renders to static SVG/CSS and ships zero client-side JS. */}
+          {/* Static server component, no client JS. */}
           <div className="hidden items-center justify-center lg:flex">
             <HeroBook />
           </div>
