@@ -23,8 +23,11 @@ export default function LoginPage() {
       <UnderConstructionNotice>
         <p>
           The sign in page is under construction and, inshallah, will be
-          available mid October. For the time being, email
-          <a href="mailto:info@thequrangroup.com" className="font-medium text-primary underline underline-offset-2 hover:text-primary/80">
+          available mid October. For the time being, email{" "}
+          <a
+            href="mailto:info@thequrangroup.com"
+            className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
+          >
             info@thequrangroup.com
           </a>
           .
@@ -32,50 +35,50 @@ export default function LoginPage() {
       </UnderConstructionNotice>
       <form className="space-y-5">
         <fieldset disabled className="space-y-5">
-        {/* Email */}
-        <div className="space-y-2">
-          <Label htmlFor="email">Email address</Label>
+          {/* Email */}
+          <div className="space-y-2">
+            <Label htmlFor="email">Email address</Label>
 
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="you@example.com"
-            autoComplete="email"
-          />
-        </div>
-
-        {/* Password */}
-        <div className="space-y-2">
-          <div className="flex items-center justify-between">
-            <Label htmlFor="password">Password</Label>
-
-            <Link
-              href="/forgot-password"
-              className="text-xs font-medium text-primary transition-colors hover:underline"
-            >
-              Forgot password?
-            </Link>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autoComplete="email"
+            />
           </div>
 
-          <Input
-            id="password"
-            name="password"
-            type="password"
-            placeholder="Enter your password"
-            autoComplete="current-password"
-          />
-        </div>
+          {/* Password */}
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <Label htmlFor="password">Password</Label>
 
-        {/* Submit */}
-        <Button
-          type="submit"
-          disabled
-          className="h-11 w-full bg-gradient-primary shadow-soft"
-        >
-          Sign in
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
+              <Link
+                href="/forgot-password"
+                className="text-xs font-medium text-primary transition-colors hover:underline"
+              >
+                Forgot password?
+              </Link>
+            </div>
+
+            <Input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Enter your password"
+              autoComplete="current-password"
+            />
+          </div>
+
+          {/* Submit */}
+          <Button
+            type="submit"
+            disabled
+            className="h-11 w-full bg-gradient-primary shadow-soft"
+          >
+            Sign in
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
         </fieldset>
       </form>
 
