@@ -53,7 +53,7 @@ export default function CookieConsent() {
             {/* TODO: replace with final copy, reviewed alongside the privacy policy. */}
             We would like to use analytics cookies to understand how people use
             the site so we can improve it. We will not set them unless you
-            agree. Read our
+            agree. Read our{" "}
             <a
               href="/privacy"
               className="font-medium text-primary underline underline-offset-2"
