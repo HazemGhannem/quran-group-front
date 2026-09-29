@@ -35,6 +35,7 @@ export default function ForgotPasswordPage() {
         <Button
           type="submit"
           className="h-11 w-full bg-gradient-primary shadow-soft"
+          disabled
         >
           Send reset link
           <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
@@ -43,7 +44,10 @@ export default function ForgotPasswordPage() {
 
       <p className="mt-6 text-center text-sm text-muted-foreground">
         Remembered it?
-        <Link href="/login" className="font-medium text-primary hover:underline">
+        <Link
+          href="/login"
+          className="font-medium text-primary hover:underline"
+        >
           Back to sign in
         </Link>
       </p>

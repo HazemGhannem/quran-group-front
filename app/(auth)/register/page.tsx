@@ -23,14 +23,17 @@ export default function SignUpPage() {
       <UnderConstructionNotice>
         <p>
           The sign up form is under construction and, inshallah, will be
-          available mid October. For the time being, email
-          <a href="mailto:info@thequrangroup.com" className="font-medium text-primary underline underline-offset-2 hover:text-primary/80">
+          available mid October. For the time being, email{" "}
+          <a
+            href="mailto:info@thequrangroup.com"
+            className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
+          >
             info@thequrangroup.com
           </a>
           .
         </p>
         <p>
-          In the meantime, please use this form:
+          In the meantime, please use this form:{" "}
           <a
             href="https://forms.gle/v2CPd26ZR4xkR3QU7"
             target="_blank"
@@ -43,8 +46,8 @@ export default function SignUpPage() {
       </UnderConstructionNotice>
       <form className="space-y-5">
         <fieldset disabled className="space-y-5">
-        {/* Account type */}
-        {/* <div className="space-y-2">
+          {/* Account type */}
+          {/* <div className="space-y-2">
           <Label htmlFor="role">I want to sign up as</Label>
           <Select id="role" name="role" defaultValue="">
             <option value="" disabled>
@@ -54,81 +57,81 @@ export default function SignUpPage() {
             <option value="teacher">Teacher</option>
           </Select>
         </div> */}
-        {/* Full name */}
-        <div className="space-y-2">
-          <Label htmlFor="name">Full name</Label>
-          <Input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="John Doe"
-            autoComplete="name"
-          />
-        </div>
-        {/* Email */}
-        <div className="space-y-2">
-          <Label htmlFor="email">Email address</Label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="you@example.com"
-            autoComplete="email"
-          />
-        </div>
-        {/* Phone */}
-        <div className="space-y-2">
-          <Label htmlFor="phone">Phone</Label>
-          <Input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="+xx xxx xxx xxx"
-            autoComplete="tel"
-          />
-        </div>
-        {/* Gender */}
-        <div className="space-y-2">
-          <Label htmlFor="gender">Gender</Label>
-          <Select id="gender" name="gender" defaultValue="">
-            <option value="" disabled>
-              Select your gender
-            </option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </Select>
-        </div>
-        {/* Password */}
-        <div className="space-y-2">
-          <Label htmlFor="password">Password</Label>
-          <Input
-            id="password"
-            name="password"
-            type="password"
-            placeholder="Enter your password"
-            autoComplete="new-password"
-          />
-        </div>
-        {/* Confirm password */}
-        <div className="space-y-2">
-          <Label htmlFor="confirm-password">Confirm password</Label>
-          <Input
-            id="confirm-password"
-            name="confirm-password"
-            type="password"
-            placeholder="Re-enter your password"
-            autoComplete="new-password"
-          />
-        </div>
-        {/* Submit */}
-        <Button
-          type="submit"
-          disabled
-          className="h-11 w-full bg-gradient-primary shadow-soft"
-        >
-          Create account
-          <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
-        </Button>
+          {/* Full name */}
+          <div className="space-y-2">
+            <Label htmlFor="name">Full name</Label>
+            <Input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="John Doe"
+              autoComplete="name"
+            />
+          </div>
+          {/* Email */}
+          <div className="space-y-2">
+            <Label htmlFor="email">Email address</Label>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autoComplete="email"
+            />
+          </div>
+          {/* Phone */}
+          <div className="space-y-2">
+            <Label htmlFor="phone">Phone</Label>
+            <Input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="+xx xxx xxx xxx"
+              autoComplete="tel"
+            />
+          </div>
+          {/* Gender */}
+          <div className="space-y-2">
+            <Label htmlFor="gender">Gender</Label>
+            <Select id="gender" name="gender" defaultValue="">
+              <option value="" disabled>
+                Select your gender
+              </option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </Select>
+          </div>
+          {/* Password */}
+          <div className="space-y-2">
+            <Label htmlFor="password">Password</Label>
+            <Input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Enter your password"
+              autoComplete="new-password"
+            />
+          </div>
+          {/* Confirm password */}
+          <div className="space-y-2">
+            <Label htmlFor="confirm-password">Confirm password</Label>
+            <Input
+              id="confirm-password"
+              name="confirm-password"
+              type="password"
+              placeholder="Re-enter your password"
+              autoComplete="new-password"
+            />
+          </div>
+          {/* Submit */}
+          <Button
+            type="submit"
+            disabled
+            className="h-11 w-full bg-gradient-primary shadow-soft"
+          >
+            Create account
+            <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+          </Button>
         </fieldset>
       </form>
       <p className="mt-6 text-center text-sm text-muted-foreground">

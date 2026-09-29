@@ -9,10 +9,17 @@ import {
   Cpu,
   Code,
   ClipboardList,
+  ShieldCheck,
   LucideIcon,
 } from "lucide-react";
 
-export type TeamRole = "founder" | "cto" | "developer" | "operations" | "admin";
+export type TeamRole =
+  | "founder"
+  | "cto"
+  | "developer"
+  | "qa"
+  | "operations"
+  | "admin";
 
 export interface TeamMember {
   id: string;
@@ -152,6 +159,23 @@ What drives me is simple: nobody should miss out on learning the Quran because o
     image: "/team/hazem-ghannem.png",
   },
   {
+    id: "fidaa-berrjeb",
+    name: "Fidaa Berrjeb",
+    role: "Senior QA Engineer",
+    roleType: "qa",
+    initials: "FB",
+    bio: "Making sure every part of the platform works, and feels seamless, every single time.",
+    longBio: `I'm Fidaa, a Senior QA Engineer with over 7 years of experience building rock-solid automated testing frameworks and making sure software doesn't just work, but delivers a seamless experience every single time.
+
+What drives me is finding that balance between the technical world of automation and the spiritual grounding of my faith. In Islam, we are taught to strive for ihsan: perfection, excellence, and beauty in everything we do, whether we are building software, testing code, or living our daily lives.
+
+Because when we build with excellence, we honor both our craft and our purpose.`,
+    social: {
+      linkedin: "https://www.linkedin.com/in/fidaabrj/",
+    },
+    image: "/team/fidaa-berrjeb.png",
+  },
+  {
     id: "annie-situmbeko",
     name: "Annie Situmbeko",
     role: "Head of Operations",
@@ -206,6 +230,7 @@ export const roleIcons: Record<TeamRole, LucideIcon> = {
   founder: Award,
   cto: Cpu,
   developer: Code,
+  qa: ShieldCheck,
   operations: ClipboardList,
   admin: Users,
 };
