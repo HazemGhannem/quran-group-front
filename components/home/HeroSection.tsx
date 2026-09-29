@@ -13,7 +13,7 @@ export default function Hero() {
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute top-1/2 right-1/4 h-[600px] w-[600px] rounded-full bg-gold/[0.04] blur-3xl"
+        className="pointer-events-none absolute top-1/2 right-1/4 hidden h-[600px] w-[600px] rounded-full bg-gold/[0.04] blur-3xl lg:block"
         aria-hidden="true"
       />
 

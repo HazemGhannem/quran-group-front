@@ -39,7 +39,7 @@ export default function AboutPage() {
             or cost.
           </p>
 
-          <blockquote className="mx-auto mt-10 inline-block rounded-2xl border border-white/20 bg-white/10 px-8 py-5 backdrop-blur-sm">
+          <blockquote className="mx-auto mt-10 inline-block rounded-2xl border border-white/20 bg-white/10 px-8 py-5">
             <p className="font-arabic text-2xl leading-relaxed text-gold">
               طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ
             </p>

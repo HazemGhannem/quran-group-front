@@ -81,7 +81,7 @@ export default function LoginPage() {
 
       {/* Register */}
       <p className="mt-6 text-center text-sm text-muted-foreground">
-        New here?
+        New here?{" "}
         <Link
           href="/register"
           className="font-medium text-primary hover:underline"

@@ -5,7 +5,7 @@ export default function ContactHero() {
 
       <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-5 inline-flex items-center rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-sm font-medium text-gold backdrop-blur-sm">
+          <div className="mb-5 inline-flex items-center rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-sm font-medium text-gold">
             We&apos;re here to help
           </div>
 

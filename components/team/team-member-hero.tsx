@@ -13,7 +13,7 @@ export default function TeamMemberHero({ member }: TeamMemberHeroProps) {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+      <header className="sticky top-16 z-40 border-b border-border/60 bg-background lg:bg-background/80 lg:backdrop-blur-xl">
         <div className="container mx-auto px-4 py-4">
           <Link
             href="/team"

@@ -4,8 +4,9 @@ import { NAV_LINKS } from "@/lib/navigation";
 import MobileNav from "./Nav-mobile";
 
 export default function Navbar() {
+  // Solid on mobile: backdrop blur on a sticky header causes repaint glitches in mobile Chrome.
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-border bg-background lg:bg-background/80 lg:backdrop-blur-xl">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" aria-label="The Quran Group home">

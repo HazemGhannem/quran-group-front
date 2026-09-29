@@ -254,6 +254,20 @@
   border: 1px solid hsl(var(--gold) / 0.15);
 }
 
+/* No backdrop blur on phones/tablets: it causes repaint glitches in mobile Chrome. */
+@media (max-width: 1023px) {
+  .glass,
+  .glass-strong,
+  .glass-dark {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .glass {
+    background: hsl(var(--background) / 0.95);
+  }
+}
+
 /* Gradients */
 
 .bg-gradient-hero {
