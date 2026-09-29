@@ -21,9 +21,9 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="animate-fade-up">
             <h1 className="mb-6 text-balance font-display text-5xl font-semibold leading-[1.05] sm:text-6xl lg:text-7xl">
-              Your Journey Into
+              Learn the Quran,
               <br />
-              <span className="text-gold">Sacred Knowledge</span>
+              <span className="text-gold">Always Free</span>
             </h1>
             <p className="mb-8 max-w-xl text-lg leading-relaxed text-primary-foreground/70">
               Comprehensive courses on Quran recitation, Tajweed, Fiqh, and
@@ -32,10 +32,10 @@ export default function Hero() {
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/courses"
+                href="/register"
                 className={`inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-gold px-8 font-semibold text-gold-foreground transition-colors hover:bg-gold/90 ${FOCUS_RING}`}
               >
-                Explore Courses{" "}
+                Get started
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link

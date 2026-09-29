@@ -58,7 +58,7 @@ export default async function CoursesPage({
           <p className="text-sm text-muted-foreground" aria-live="polite">
             <span className="font-semibold text-foreground">
               {matches.length}
-            </span>{" "}
+            </span>
             {matches.length === 1 ? "course" : "courses"} available
           </p>
 

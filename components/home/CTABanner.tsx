@@ -26,7 +26,7 @@ export default function CTABanner() {
               href="/register"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-gold px-8 font-semibold text-gold-foreground transition-colors hover:bg-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
             >
-              Get started{" "}
+              Get started
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>

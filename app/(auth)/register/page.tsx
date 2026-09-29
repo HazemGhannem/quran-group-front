@@ -18,7 +18,7 @@ export default function SignUpPage() {
   return (
     <AuthShell
       title="Create an account"
-      subtitle="Start your journey of sacred knowledge today."
+      subtitle="Start your journey with the Quran today."
     >
       <UnderConstructionNotice>
         <p>
@@ -42,6 +42,7 @@ export default function SignUpPage() {
         </p>
       </UnderConstructionNotice>
       <form className="space-y-5">
+        <fieldset disabled className="space-y-5">
         {/* Account type */}
         {/* <div className="space-y-2">
           <Label htmlFor="role">I want to sign up as</Label>
@@ -128,6 +129,7 @@ export default function SignUpPage() {
           Create account
           <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
         </Button>
+        </fieldset>
       </form>
       <p className="mt-6 text-center text-sm text-muted-foreground">
         Already have an account?

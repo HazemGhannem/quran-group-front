@@ -11,9 +11,9 @@ export default function RelatedTeamMembers({
   members,
   currentMemberId,
 }: RelatedTeamMembersProps) {
-  const relatedMembers = members
-    .filter((member) => member.id !== currentMemberId)
-    .slice(0, 3);
+  const relatedMembers = members.filter(
+    (member) => member.id !== currentMemberId
+  );
 
   return (
     <section className="border-t border-border bg-gradient-subtle py-16 md:py-24">

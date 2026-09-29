@@ -38,7 +38,7 @@ export default function FeaturedCourses({
             href="/courses"
             className="hidden items-center gap-1 rounded-sm text-sm text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold sm:flex"
           >
-            All courses{" "}
+            All courses
             <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
           </Link>
         </div>

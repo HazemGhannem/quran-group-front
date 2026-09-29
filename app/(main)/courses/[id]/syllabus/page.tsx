@@ -56,7 +56,7 @@ export default async function SyllabusPage({ params }: PageProps) {
                   </h3>
 
                   <p className="mt-1 text-xs text-muted-foreground">
-                    {module.lessons.length}{" "}
+                    {module.lessons.length}
                     {module.lessons.length === 1 ? "lesson" : "lessons"}
                   </p>
                 </div>

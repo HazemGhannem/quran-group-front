@@ -35,7 +35,7 @@ export default function AboutPage() {
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
             We were founded on a simple belief: no one should be denied the
-            opportunity to connect with the Quran because of time constraints
+            opportunity to connect with the Quran because of time constraints,
             or cost.
           </p>
 
@@ -82,11 +82,8 @@ export default function AboutPage() {
           </h2>
 
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Our mission is to provide accessible, high-quality Islamic education
-            to all, regardless of background, schedule, or circumstance. We
-            believe that small, consistent steps matter more than waiting for
-            perfect conditions. Your journey starts with one small step. Let us
-            take it together.
+            The Quran should be available to everyone. Our mission is to make
+            sure there will always be a place for you to learn it.
           </p>
 
           <blockquote className="mt-8 border-l-4 border-gold pl-6 text-left">

@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "The Quran Group: Your journey into sacred knowledge";
+export const alt = "The Quran Group: Learn the Quran, always free";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -43,7 +43,7 @@ export default function OpenGraphImage() {
             lineHeight: 1.1,
           }}
         >
-          Your Journey Into
+          Learn the Quran,
         </div>
 
         <div
@@ -55,7 +55,7 @@ export default function OpenGraphImage() {
             lineHeight: 1.1,
           }}
         >
-          Sacred Knowledge
+          Always Free
         </div>
 
         <div

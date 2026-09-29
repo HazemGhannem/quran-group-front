@@ -20,8 +20,8 @@ export default function Navbar() {
               />
             </div>
 
-            <div className="hidden sm:block">
-              <div className="font-display text-lg font-semibold text-foreground">
+            <div>
+              <div className="font-display text-base sm:text-lg font-semibold text-foreground">
                 The Quran Group
               </div>
 

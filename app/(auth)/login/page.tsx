@@ -18,7 +18,7 @@ export default function LoginPage() {
   return (
     <AuthShell
       title="Welcome back"
-      subtitle="Continue your journey of sacred knowledge."
+      subtitle="Continue your journey with the Quran."
     >
       <UnderConstructionNotice>
         <p>
@@ -31,6 +31,7 @@ export default function LoginPage() {
         </p>
       </UnderConstructionNotice>
       <form className="space-y-5">
+        <fieldset disabled className="space-y-5">
         {/* Email */}
         <div className="space-y-2">
           <Label htmlFor="email">Email address</Label>
@@ -75,6 +76,7 @@ export default function LoginPage() {
           Sign in
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
+        </fieldset>
       </form>
 
       {/* Register */}

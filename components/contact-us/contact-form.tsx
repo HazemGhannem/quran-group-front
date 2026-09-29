@@ -7,7 +7,11 @@ import { ArrowRight, CheckCircle2, CircleAlert } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Label } from "@/components/ui/Label";
-import { initialContactState } from "@/lib/actions/contact-state";
+import {
+  initialContactState,
+  type ContactField,
+  type ContactFormState,
+} from "@/lib/actions/contact-state";
 import { submitContactForm } from "@/lib/actions/contact";
 
 function SubmitButton() {
@@ -19,6 +23,32 @@ function SubmitButton() {
       <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
     </Button>
   );
+}
+
+function FieldError({
+  state,
+  field,
+}: {
+  state: ContactFormState;
+  field: ContactField;
+}) {
+  const error = state.fieldErrors?.[field];
+  if (!error) return null;
+  return (
+    <p id={`${field}-error`} className="text-sm text-destructive">
+      {error}
+    </p>
+  );
+}
+
+function fieldProps(state: ContactFormState, field: ContactField) {
+  const invalid = Boolean(state.fieldErrors?.[field]);
+  return {
+    defaultValue: state.values?.[field] ?? "",
+    "aria-invalid": invalid || undefined,
+    "aria-describedby": invalid ? `${field}-error` : undefined,
+    className: invalid ? "border-destructive!" : undefined,
+  };
 }
 
 export default function ContactForm() {
@@ -43,7 +73,12 @@ export default function ContactForm() {
         </p>
 
         {/* Posts to a Server Action. */}
-        <form action={formAction} className="mt-8 space-y-5">
+        <form
+          key={JSON.stringify(state)}
+          action={formAction}
+          noValidate
+          className="mt-8 space-y-5"
+        >
           {/* Name + Email */}
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="space-y-2">
@@ -56,7 +91,9 @@ export default function ContactForm() {
                 placeholder="John Doe"
                 autoComplete="name"
                 required
+                {...fieldProps(state, "name")}
               />
+              <FieldError state={state} field="name" />
             </div>
 
             <div className="space-y-2">
@@ -69,7 +106,9 @@ export default function ContactForm() {
                 placeholder="john@example.com"
                 autoComplete="email"
                 required
+                {...fieldProps(state, "email")}
               />
+              <FieldError state={state} field="email" />
             </div>
           </div>
 
@@ -83,7 +122,9 @@ export default function ContactForm() {
               type="text"
               placeholder="How can we help?"
               required
+              {...fieldProps(state, "subject")}
             />
+            <FieldError state={state} field="subject" />
           </div>
 
           {/* Message */}
@@ -96,8 +137,12 @@ export default function ContactForm() {
               rows={6}
               placeholder="Write your message here..."
               required
-              className="flex w-full resize-none rounded-md border border-input bg-background px-3 py-3 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              defaultValue={state.values?.message ?? ""}
+              aria-invalid={Boolean(state.fieldErrors?.message) || undefined}
+              aria-describedby={state.fieldErrors?.message ? "message-error" : undefined}
+              className={`${state.fieldErrors?.message ? "border-destructive! " : ""}flex w-full resize-none rounded-md border border-input bg-background px-3 py-3 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2`}
             />
+            <FieldError state={state} field="message" />
           </div>
 
           <SubmitButton />
